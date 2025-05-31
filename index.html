@@ -32,7 +32,10 @@
     }
 
     .link-button {
-      display: block;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
       width: 100%;
       max-width: 400px;
       margin: 10px 0;
@@ -48,6 +51,12 @@
 
     .link-button:hover {
       background-color: #2ea043;
+    }
+
+    .icon {
+      width: 20px;
+      height: 20px;
+      fill: white;
     }
 
     @media (max-width: 480px) {
@@ -81,6 +90,16 @@
   </a>
   <a class="link-button" href="https://www.youtube.com/@BloxiTeam" target="_blank">
     MI CANAL DE YOUTUBE
+  </a>
+  <!-- Botón de contacto -->
+  <a class="link-button" href="mailto:juegaajose@gmail.com">
+    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path d="M20 4H4C2.897 4 2 4.897 2 6v12c0 1.103.897 2 2 2h16c1.103 
+      0 2-.897 2-2V6c0-1.103-.897-2-2-2zm0 
+      2v.511l-8 5.333-8-5.333V6h16zM4 
+      18V8.489l8 5.333 8-5.333V18H4z"/>
+    </svg>
+    Contacto
   </a>
 </body>
 </html>
