@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BloxTeamLink</title>
 
-  <!-- Verificación Monetag -->
+  <!-- Etiqueta de verificación de PropellerAds (Monetag) -->
   <meta name="monetag" content="d77c386a0a8d55394da6c67e727df519">
 
-  <!-- Google AdSense -->
+  <!-- Código de Google AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3663870204635425"
     crossorigin="anonymous"></script>
 
@@ -22,39 +22,31 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: #0d1117;
       color: white;
+      padding: 20px;
     }
 
-    header {
-      background-color: #161b22;
-      padding: 15px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
-    header h1 {
+    h1 {
       color: #58a6ff;
-      font-size: 1.5em;
-      margin: 0;
+      margin-bottom: 30px;
+      font-size: 2em;
+      text-align: center;
+    }
+
+    nav {
+      text-align: center;
+      margin-bottom: 20px;
     }
 
     nav a {
+      margin: 0 10px;
       color: #58a6ff;
-      margin-left: 15px;
       text-decoration: none;
-      font-size: 1em;
+      font-weight: bold;
+      cursor: pointer;
     }
 
     nav a:hover {
       text-decoration: underline;
-    }
-
-    .container {
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
     }
 
     .link-button {
@@ -64,7 +56,7 @@
       gap: 10px;
       width: 100%;
       max-width: 400px;
-      margin: 10px 0;
+      margin: 10px auto;
       padding: 15px 20px;
       background-color: #238636;
       color: white;
@@ -94,23 +86,21 @@
     }
 
     section {
+      display: none;
       max-width: 800px;
-      margin: 30px auto;
-      padding: 0 20px;
+      margin: 20px auto;
+      background-color: #161b22;
+      padding: 20px;
+      border-radius: 12px;
     }
 
-    h2 {
-      color: #58a6ff;
+    section.active {
+      display: block;
     }
 
     @media (max-width: 480px) {
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      nav a {
-        margin: 5px 0 0 0;
+      h1 {
+        font-size: 1.5em;
       }
 
       .link-button {
@@ -121,24 +111,22 @@
   </style>
 </head>
 <body>
+  <h1>BloxTeamLink</h1>
 
-  <header>
-    <h1>BloxTeamLink</h1>
-    <nav>
-      <a href="#nosotros">Sobre nosotros</a>
-      <a href="#privacidad">Política de privacidad</a>
-      <a href="#terminos">Términos y condiciones</a>
-    </nav>
-  </header>
+  <nav>
+    <a onclick="volverAlInicio()">Inicio</a>
+    <a onclick="mostrarSeccion('nosotros')">Sobre nosotros</a>
+    <a onclick="mostrarSeccion('privacidad')">Política de privacidad</a>
+    <a onclick="mostrarSeccion('terminos')">Términos y condiciones</a>
+  </nav>
 
-  <div class="container">
+  <div id="enlaces">
     <a class="link-button ad-link" href="https://discord.gg/sGYU2yTjSt">EN ESTE DISCORD DAN FRUTAS, CUENTAS Y GAMEPASS SOLO INVITANDO GENTE!</a>
     <a class="link-button ad-link" href="https://tpi.li/egqbCA">GANA FRUTAS PARA BLOX FRUITS AQUI</a>
     <a class="link-button ad-link" href="https://tpi.li/UndWh3b7l">GANA ROBUX AQUI</a>
     <a class="link-button ad-link" href="https://planetrbx.com/?ref=joselate21">GANA ROBUX COMPLETANDO TAREAS Y ENCUESTAS SOLO CON TU USUARIO. SIN INICIAR SESION</a>
     <a class="link-button ad-link" href="https://www.roblox.com/catalog?Category=3&Subcategory=3&CreatorName=joselate21">Comprar ropa Barata en Roblox</a>
     <a class="link-button ad-link" href="https://www.youtube.com/@BloxiTeam">MI CANAL DE YOUTUBE</a>
-
     <a class="link-button contact-button" href="mailto:juegaajose@gmail.com">
       <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
         <path d="M20 4H4C2.897 4 2 4.897 2 6v12c0 1.103.897 2 2 2h16c1.103 
@@ -150,49 +138,20 @@
     </a>
   </div>
 
+  <!-- Secciones ocultas -->
   <section id="nosotros">
     <h2>Sobre nosotros</h2>
-    <p>BloxTeamLink es una página creada por fans de Roblox y Blox Fruits para compartir recursos útiles, promociones y recompensas con la comunidad. Nuestro objetivo es ayudarte a obtener beneficios sin necesidad de trucos ni hacks, solo con participación activa y legítima.</p>
+    <p>Somos una comunidad dedicada a compartir recompensas, trucos y recursos relacionados con Roblox y Blox Fruits. Nuestro objetivo es ayudarte a obtener los mejores beneficios de forma gratuita.</p>
   </section>
 
   <section id="privacidad">
-    <h2>Política de Privacidad</h2>
-    <p>En BloxTeamLink, respetamos tu privacidad y nos comprometemos a proteger la información personal que puedas proporcionarnos mientras navegas por nuestro sitio web.</p>
-
-    <h3>1. Información que recopilamos</h3>
-    <p>No recopilamos datos personales directamente. Sin embargo, al hacer clic en enlaces externos o usar formularios de contacto, terceros pueden recopilar información como cookies, dirección IP o datos de navegación.</p>
-
-    <h3>2. Cookies y tecnologías similares</h3>
-    <p>Utilizamos cookies a través de servicios como Google AdSense para mostrar anuncios relevantes. Estas cookies pueden recopilar datos de navegación para personalizar la experiencia del usuario.</p>
-
-    <h3>3. Enlaces a sitios externos</h3>
-    <p>Este sitio contiene enlaces a plataformas externas (como YouTube, Roblox, sitios de recompensas, etc.). No somos responsables del contenido ni de las políticas de privacidad de dichos sitios.</p>
-
-    <h3>4. Publicidad</h3>
-    <p>Este sitio utiliza Google AdSense y otras plataformas de monetización. Google puede usar cookies para mostrar anuncios personalizados. Puedes ver más sobre cómo Google usa tus datos en <a href="https://policies.google.com/technologies/ads" target="_blank" style="color:#58a6ff;">su política de anuncios</a>.</p>
-
-    <h3>5. Contacto</h3>
-    <p>Si tienes preguntas sobre esta política, puedes escribirnos a: <a href="mailto:juegaajose@gmail.com" style="color:#58a6ff;">juegaajose@gmail.com</a>.</p>
+    <h2>Política de privacidad</h2>
+    <p>Tu privacidad es importante para nosotros. No recopilamos información personal directamente. Al hacer clic en enlaces externos, estarás sujeto a sus propias políticas de privacidad. Recomendamos revisar sus términos antes de interactuar.</p>
   </section>
 
   <section id="terminos">
-    <h2>Términos y Condiciones</h2>
-    <p>Al acceder y utilizar BloxTeamLink, aceptas cumplir con los siguientes términos y condiciones:</p>
-
-    <h3>1. Uso del sitio</h3>
-    <p>Este sitio ofrece enlaces informativos a recursos, recompensas, promociones, servidores de Discord, y otros sitios de terceros. El uso de estos enlaces es bajo tu propio riesgo.</p>
-
-    <h3>2. Propiedad intelectual</h3>
-    <p>Todo el contenido visual, nombres e identidades relacionados con “BloxTeamLink” son propiedad de sus respectivos dueños. No reclamamos derechos sobre marcas como Roblox o sus productos.</p>
-
-    <h3>3. Limitación de responsabilidad</h3>
-    <p>No nos responsabilizamos por el uso que los usuarios hagan de los sitios enlazados, ni por pérdidas, daños o reclamos derivados del uso de servicios ofrecidos en otras páginas.</p>
-
-    <h3>4. Modificaciones</h3>
-    <p>Nos reservamos el derecho de modificar estos términos en cualquier momento. Te recomendamos revisar esta página periódicamente.</p>
-
-    <h3>5. Contacto</h3>
-    <p>Si tienes dudas o sugerencias, contáctanos en <a href="mailto:juegaajose@gmail.com" style="color:#58a6ff;">juegaajose@gmail.com</a>.</p>
+    <h2>Términos y condiciones</h2>
+    <p>El uso de esta página implica aceptar que no nos hacemos responsables del contenido de sitios de terceros. Los enlaces compartidos tienen fines promocionales y pueden contener publicidad o sistemas de referidos.</p>
   </section>
 
   <script>
@@ -205,7 +164,17 @@
         window.location.href = this.href;
       });
     });
-  </script>
 
+    function mostrarSeccion(id) {
+      document.querySelectorAll("section").forEach(sec => sec.classList.remove("active"));
+      document.getElementById(id).classList.add("active");
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function volverAlInicio() {
+      document.querySelectorAll("section").forEach(sec => sec.classList.remove("active"));
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
 </body>
 </html>
