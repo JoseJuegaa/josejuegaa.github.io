@@ -88,26 +88,14 @@
   
   <h1>BloxTeamLink</h1>
 
-  <a class="link-button" href="#" onclick="openBothLinks('https://discord.gg/sGYU2yTjSt')">
-    EN ESTE DISCORD DAN FRUTAS, CUENTAS Y GAMEPASS SOLO INVITANDO GENTE!
-  </a>
-  <a class="link-button" href="#" onclick="openBothLinks('https://tpi.li/egqbCA')">
-    GANA FRUTAS PARA BLOX FRUITS AQUI
-  </a>
-  <a class="link-button" href="#" onclick="openBothLinks('https://tpi.li/UndWh3b7l')">
-    GANA ROBUX AQUI
-  </a>
-  <a class="link-button" href="#" onclick="openBothLinks('https://planetrbx.com/?ref=joselate21')">
-    GANA ROBUX COMPLETANDO TAREAS Y ENCUESTAS SOLO CON TU USUARIO. SIN INICIAR SESION
-  </a>
-  <a class="link-button" href="#" onclick="openBothLinks('https://www.roblox.com/catalog?Category=3&Subcategory=3&CreatorName=joselate21')">
-    Comprar ropa Barata en Roblox
-  </a>
-  <a class="link-button" href="#" onclick="openBothLinks('https://www.youtube.com/@BloxiTeam')">
-    MI CANAL DE YOUTUBE
-  </a>
+  <a class="link-button ad-link" href="https://discord.gg/sGYU2yTjSt">EN ESTE DISCORD DAN FRUTAS, CUENTAS Y GAMEPASS SOLO INVITANDO GENTE!</a>
+  <a class="link-button ad-link" href="https://tpi.li/egqbCA">GANA FRUTAS PARA BLOX FRUITS AQUI</a>
+  <a class="link-button ad-link" href="https://tpi.li/UndWh3b7l">GANA ROBUX AQUI</a>
+  <a class="link-button ad-link" href="https://planetrbx.com/?ref=joselate21">GANA ROBUX COMPLETANDO TAREAS Y ENCUESTAS SOLO CON TU USUARIO. SIN INICIAR SESION</a>
+  <a class="link-button ad-link" href="https://www.roblox.com/catalog?Category=3&Subcategory=3&CreatorName=joselate21">Comprar ropa Barata en Roblox</a>
+  <a class="link-button ad-link" href="https://www.youtube.com/@BloxiTeam">MI CANAL DE YOUTUBE</a>
 
-  <!-- Botón de contacto sin anuncio -->
+  <!-- Botón de contacto con color distinto (sin publicidad) -->
   <a class="link-button contact-button" href="mailto:juegaajose@gmail.com">
     <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
       <path d="M20 4H4C2.897 4 2 4.897 2 6v12c0 1.103.897 2 2 2h16c1.103 
@@ -118,18 +106,17 @@
     Contacto
   </a>
 
+  <!-- Script para abrir primero el ad y luego el link real -->
   <script>
-    function openBothLinks(realLink) {
-      const adLink = 'https://otieu.com/4/9400585';
+    const adUrl = "https://otieu.com/4/9400585"; // URL del anuncio
 
-      // Abrimos primero el link real
-      window.open(realLink, '_blank');
-
-      // Después de medio segundo, intentamos abrir el anuncio
-      setTimeout(function () {
-        window.open(adLink, '_blank');
-      }, 500);
-    }
+    document.querySelectorAll('.ad-link').forEach(link => {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        window.open(adUrl, '_blank'); // Abre el anuncio en nueva pestaña
+        window.location.href = this.href; // Luego abre el link normal
+      });
+    });
   </script>
 </body>
 </html>
